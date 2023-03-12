@@ -19,7 +19,7 @@ class MainActivityTest {
 
     @Test
     fun testUI() {
-        onView(withText("Hello world!")).check(matches(isDisplayed()))
+        onView(withText("Hello World!")).check(matches(isDisplayed()))
     }
 
 }
