@@ -20,10 +20,18 @@ jobs:
       run: ./gradlew build
     - name: Run tests
       run: ./gradlew test
-    - name: Run espresso tests
-      uses: reactivecircus/android-emulator-runner@v2
-      with:
-      api-level: 29
-      script: ./gradlew connectedCheck
+
+  instrumentation-test:
+     needs: [unit-test]
+     runs-on: macos-latest
+     steps:
+       - name: Checkout the code
+         uses: actions/checkout@v2
+
+       - name: Run espresso tests
+         uses: reactivecircus/android-emulator-runner@v2
+         with:
+           api-level: 32
+           script: ./gradlew connectedCheck
 
 
