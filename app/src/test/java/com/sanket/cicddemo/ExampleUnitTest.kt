@@ -17,7 +17,7 @@ class ExampleUnitTest {
 
     @Test
     fun deletion_isCorrect() {
-        assertEquals(4, 4 - 4)
+        assertEquals(0, 4 - 4)
     }
 
 }
